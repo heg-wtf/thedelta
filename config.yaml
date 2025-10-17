@@ -1,0 +1,9 @@
+blog:
+  title: "The Delta"
+  description: "Insights on technology, innovation, and the future of digital transformation"
+
+theme:
+  name: "default"
+
+publication:
+  path: "docs"

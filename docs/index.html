@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Delta</title>
+    <meta name="description" content="Insights on technology, innovation, and the future of digital transformation">
+    <meta name="keywords" content="technology, innovation, digital transformation, web development, static sites">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Delta">
+    <meta property="og:description" content="Insights on technology, innovation, and the future of digital transformation">
+    <meta property="og:site_name" content="The Delta">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Delta">
+    <meta name="twitter:description" content="Insights on technology, innovation, and the future of digital transformation">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://thedelta.example.com/">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Delta">
+    <meta name="language" content="English">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            color-scheme: light;
+            --fc-yellow: #ffd600;
+            --fc-black: #0f0f0f;
+            --fc-text: #151515;
+            --fc-muted: #505050;
+            --fc-border: #d8d8d8;
+            --fc-surface: #ffffff;
+            --fc-background: #f6f6f6;
+            --body-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --display-font: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            background: var(--fc-background);
+            color: var(--fc-text);
+            min-height: 100vh;
+            padding: 0 1.5rem 4rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--fc-yellow);
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .masthead {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 2.75rem 0 1.5rem;
+            border-bottom: 2px solid var(--fc-black);
+            margin-bottom: 2.5rem;
+        }
+
+        .brand {
+            font-family: var(--display-font);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .brand::after {
+            content: '';
+            display: inline-block;
+            width: clamp(36px, 5vw, 48px);
+            height: 10px;
+            background: var(--fc-yellow);
+        }
+
+        .masthead-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            border: 2px solid var(--fc-black);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: var(--fc-yellow);
+            color: var(--fc-black);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .masthead-contact:hover {
+            background: var(--fc-black);
+            color: #fff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-card {
+            position: relative;
+            background: var(--fc-surface);
+            padding: clamp(2rem, 4vw, 2.8rem);
+            border: 2px solid var(--fc-black);
+            box-shadow: 16px 16px 0 0 var(--fc-yellow);
+            min-height: 360px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--fc-black);
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-title {
+            font-family: var(--display-font);
+            font-size: clamp(2.6rem, 4vw, 3.4rem);
+            line-height: 1.05;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-title a {
+            text-decoration: none;
+        }
+
+        .hero-dek {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            color: var(--fc-muted);
+            max-width: 520px;
+            margin-bottom: auto;
+        }
+
+        .hero-meta {
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--fc-black);
+        }
+
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .feed-title {
+            font-size: 1.35rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--fc-black);
+            padding-bottom: 0.75rem;
+        }
+
+        .story-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .story-item {
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid var(--fc-border);
+        }
+
+        .story-item:last-child {
+            border-bottom: none;
+        }
+
+        .story-eyebrow {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.26em;
+            color: var(--fc-muted);
+            margin-bottom: 0.55rem;
+        }
+
+        .story-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 0.4rem;
+        }
+
+        .story-meta {
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--fc-muted);
+        }
+
+        .story-summary {
+            font-size: 0.95rem;
+            color: var(--fc-muted);
+            margin-top: 0.6rem;
+        }
+
+        .story-placeholder {
+            font-size: 0.95rem;
+            color: var(--fc-muted);
+        }
+
+        .more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .secondary-feed {
+            background: var(--fc-surface);
+            border: 1px solid var(--fc-border);
+            padding: 2.2rem clamp(1.6rem, 4vw, 2.2rem);
+            border-left: 6px solid var(--fc-yellow);
+        }
+
+        .secondary-feed h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .secondary-feed ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .secondary-feed li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .secondary-feed li + li {
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--fc-border);
+        }
+
+        .secondary-feed .title {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .site-footer {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 2px solid var(--fc-black);
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--fc-muted);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                box-shadow: 12px 12px 0 0 var(--fc-yellow);
+            }
+
+            .feed {
+                flex-direction: column;
+            }
+
+            .secondary-feed {
+                border-left-width: 4px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 0 1rem 3rem;
+            }
+
+            .masthead {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .masthead-contact {
+                padding: 0.5rem 1rem;
+            }
+
+            .hero-card {
+                padding: 1.8rem 1.6rem;
+            }
+
+            .site-footer {
+                letter-spacing: 0.12em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    
+    
+    <div class="page">
+        <header class="masthead">
+            <span class="brand">The Delta</span>
+            <a class="masthead-contact" href="mailto:hello@example.com">Contact</a>
+        </header>
+
+        <main id="posts">
+            <section class="hero-grid">
+                
+                
+                <article class="hero-card">
+                    <span class="hero-label">Featured Story</span>
+                    <h1 class="hero-title">
+                        <a href="/2025/10/17/welcome/">The Future of Static Site Generation</a>
+                    </h1>
+                    
+                    <p class="hero-dek">Exploring modern approaches to building fast, secure, and scalable static websites with Python-based tools.</p>
+                    
+                    <p class="hero-meta">
+                        
+                            Latest Update
+                        
+                    </p>
+                </article>
+                
+
+                <aside class="secondary-feed">
+                    <h2>Briefings</h2>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a class="title" href="/2025/10/17/welcome/">The Future of Static Site Generation</a>
+                            
+                            <span class="story-summary">Exploring modern approaches to building fast, secure, and scalable static websites with Python-based tools.</span>
+                            
+                            
+                        </li>
+                        
+                        <li>
+                            <a class="title" href="/2025/10/15/modern-web-architecture/">Modern Web Architecture - JAMstack and Beyond</a>
+                            
+                            <span class="story-summary">A deep dive into modern web architecture patterns, exploring JAMstack, serverless computing, and edge computing paradigms.</span>
+                            
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </aside>
+            </section>
+
+            <section class="feed">
+                <h2 class="feed-title">Latest</h2>
+                
+                <ul class="story-list">
+                    
+                    <li class="story-item">
+                        <a class="story-title" href="/2025/10/15/modern-web-architecture/">Modern Web Architecture - JAMstack and Beyond</a>
+                        
+                        <p class="story-summary">A deep dive into modern web architecture patterns, exploring JAMstack, serverless computing, and edge computing paradigms.</p>
+                        
+                        <div class="story-meta">
+                            
+                                Updated regularly
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            © The Delta
+        </footer>
+    </div>
+</body>
+</html>
