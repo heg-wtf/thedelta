@@ -9,6 +9,8 @@ build:
 	@uv run zvc build
 	@echo "📝 Creating CNAME file..."
 	@echo "thedelta.news" > docs/CNAME
+	@echo "🖼️ Copying thumbnail image..."
+	@cp themes/default/thumbnail.png docs/thumbnail.png
 	@echo "✅ Build complete!"
 
 clean:
