@@ -41,27 +41,57 @@ uv run zvc clean
 
 ### Create a New Post
 
-Create a folder in the `contents/` directory and add a Markdown file:
+Use the `make new` command to automatically create a new post:
 
 ```bash
-# Create folder
-mkdir contents/my-post
-
-# Create post
-nano contents/my-post/my-post.md
+make new TITLE='Your Post Title'
 ```
+
+This will:
+- Create a directory with URL-friendly slug: `contents/{slug}/`
+- Generate a Markdown file: `contents/{slug}/{slug}.md`
+- Add frontmatter template with current date
+- Support both English and Korean titles
+
+**Examples:**
+
+```bash
+# English title
+make new TITLE='AI and Machine Learning'
+# → contents/ai-and-machine-learning/ai-and-machine-learning.md
+
+# Korean title
+make new TITLE='인공지능의 미래'
+# → contents/인공지능의-미래/인공지능의-미래.md
+
+# Long title
+make new TITLE='The Future of Web Development in 2025'
+# → contents/the-future-of-web-development-in-2025/...
+```
+
+**Generated file structure:**
 
 ```markdown
 ---
-title: My Post Title
-pub_date: 2025-10-17
-description: Post description for SEO
-tags: tag1, tag2, tag3
+title: Your Post Title
+pub_date: 2025-10-21
+description: 
+tags: 
+featured_image: 
 ---
 
-# Content
+# Your Post Title
 
-Write your post in Markdown.
+Write your content here...
+```
+
+**Manual creation (alternative):**
+
+If you prefer, you can also create posts manually:
+
+```bash
+mkdir contents/my-post
+nano contents/my-post/my-post.md
 ```
 
 **Important**: Post files must be inside a folder. Follow the `contents/{slug}/{slug}.md` structure.
@@ -155,6 +185,8 @@ Deploy the `docs/` directory to GitHub Pages, Netlify, Vercel, or any static hos
 - ✅ Code syntax highlighting ready
 - ✅ Google Fonts (Montserrat)
 - ✅ Clean typography
+- ✅ **Automated post creation** with `make new` command
+- ✅ **Korean title support** for international content
 
 ## 📝 Writing Tips
 
@@ -185,6 +217,7 @@ featured_image: "/path/to/image.jpg"   # Optional (for social sharing)
 
 | Command | Description |
 |---------|-------------|
+| `make new TITLE='...'` | Create new post with directory and template |
 | `make serve` | Build + start local server on port 8002 |
 | `make build` | Build static site to `docs/` |
 | `make clean` | Remove generated files |
