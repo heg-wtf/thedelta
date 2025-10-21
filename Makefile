@@ -11,12 +11,43 @@ build:
 	@echo "thedelta.news" > docs/CNAME
 	@echo "🖼️ Copying assets directory..."
 	@cp -r themes/default/assets docs/assets
+	@echo "🗺️ Generating sitemap..."
+	@make sitemap
+	@echo "🤖 Creating robots.txt..."
+	@make robots
 	@echo "✅ Build complete!"
 
 clean:
 	@echo "🧹 Cleaning generated files..."
 	@uv run zvc clean
 	@echo "✅ Clean complete!"
+
+sitemap:
+	@echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > docs/sitemap.xml
+	@echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> docs/sitemap.xml
+	@echo "  <url>" >> docs/sitemap.xml
+	@echo "    <loc>https://thedelta.news/</loc>" >> docs/sitemap.xml
+	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
+	@echo "    <changefreq>weekly</changefreq>" >> docs/sitemap.xml
+	@echo "    <priority>1.0</priority>" >> docs/sitemap.xml
+	@echo "  </url>" >> docs/sitemap.xml
+	@for file in docs/2025/*/*/index.html; do \
+		if [ -f "$$file" ]; then \
+			date=$$(basename $$(dirname $$file)); \
+			echo "  <url>" >> docs/sitemap.xml; \
+			echo "    <loc>https://thedelta.news/$$(echo $$file | sed 's|docs/||' | sed 's|/index.html||')/</loc>" >> docs/sitemap.xml; \
+			echo "    <lastmod>$$date</lastmod>" >> docs/sitemap.xml; \
+			echo "    <changefreq>monthly</changefreq>" >> docs/sitemap.xml; \
+			echo "    <priority>0.8</priority>" >> docs/sitemap.xml; \
+			echo "  </url>" >> docs/sitemap.xml; \
+		fi; \
+	done
+	@echo "</urlset>" >> docs/sitemap.xml
+
+robots:
+	@echo "User-agent: *" > docs/robots.txt
+	@echo "Allow: /" >> docs/robots.txt
+	@echo "Sitemap: https://thedelta.news/sitemap.xml" >> docs/robots.txt
 
 new:
 	@if [ -z "$(TITLE)" ]; then \
