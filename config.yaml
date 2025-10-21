@@ -1,6 +1,8 @@
 blog:
   title: "The Delta"
   description: "Insights on technology, innovation, and the future of digital transformation"
+  contact_email: "me@heg.wtf"
+  site_url: "https://thedelta.example.com"
 
 theme:
   name: "default"

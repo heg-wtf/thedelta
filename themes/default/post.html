@@ -16,6 +16,8 @@
     <meta property="og:site_name" content="{{ settings.blog_title }}">
     {% if post.featured_image %}
     <meta property="og:image" content="{{ post.featured_image }}">
+    {% else %}
+    <meta property="og:image" content="{{ settings.site_url }}/thumbnail.png">
     {% endif %}
     
     <!-- Twitter -->
@@ -24,6 +26,8 @@
     <meta name="twitter:description" content="{{ post.description if post.description else settings.blog_desc }}">
     {% if post.featured_image %}
     <meta name="twitter:image" content="{{ post.featured_image }}">
+    {% else %}
+    <meta name="twitter:image" content="{{ settings.site_url }}/thumbnail.png">
     {% endif %}
     
     <!-- Article specific -->
@@ -386,9 +390,11 @@
     </style>
 </head>
 <body>
+    {% set contact_email = settings.contact_email | default('hello@example.com', true) %}
     <div class="page">
         <header class="masthead">
             <a href="/index.html" class="brand">THE DELTA</a>
+            <a class="masthead-contact" href="mailto:{{ contact_email }}">Contact</a>
         </header>
 
         <div class="article-header">

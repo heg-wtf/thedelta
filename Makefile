@@ -7,6 +7,8 @@ serve: build
 build:
 	@echo "🔨 Building static site..."
 	@uv run zvc build
+	@echo "📝 Creating CNAME file..."
+	@echo "thedelta.news" > docs/CNAME
 	@echo "✅ Build complete!"
 
 clean:
