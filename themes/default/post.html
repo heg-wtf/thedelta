@@ -9,6 +9,13 @@
     <meta name="author" content="{{ settings.blog_title }}">
     <meta name="publish_date" content="{{ post.created_at }}">
     
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ post.title }}">
@@ -17,7 +24,7 @@
     {% if post.featured_image %}
     <meta property="og:image" content="{{ post.featured_image }}">
     {% else %}
-    <meta property="og:image" content="{{ settings.site_url }}/thumbnail.png">
+    <meta property="og:image" content="{{ settings.site_url }}/assets/thumbnail.png">
     {% endif %}
     
     <!-- Twitter -->
@@ -27,7 +34,7 @@
     {% if post.featured_image %}
     <meta name="twitter:image" content="{{ post.featured_image }}">
     {% else %}
-    <meta name="twitter:image" content="{{ settings.site_url }}/thumbnail.png">
+    <meta name="twitter:image" content="{{ settings.site_url }}/assets/thumbnail.png">
     {% endif %}
     
     <!-- Article specific -->
