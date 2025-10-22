@@ -1,9 +1,11 @@
 ---
+author: 'Michael Harrison'
 title: The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter
 pub_date: 2025-10-22
 description: After 14 years, Tim Cook prepares to exit as Apple elevates John Ternus, the hardware engineering chief behind Apple Silicon, as heir apparent. The choice signals Apple's bet on operational excellence over risky innovation—but raises questions about whether an engineer-CEO can navigate AI, ambient computing, and strategy challenges. As the entire C-suite faces retirement, Silicon Valley watches to see if Apple becomes a mature cash machine or remains a technology pioneer.
 tags: apple, tim-cook, john-ternus, succession, ceo, leadership-transition, apple-silicon, hardware, innovation, silicon-valley
 featured_image: 
+
 ---
 
 # The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter

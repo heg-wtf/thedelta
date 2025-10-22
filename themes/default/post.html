@@ -6,7 +6,7 @@
     <title>{{ post.title }} - {{ settings.blog_title }}</title>
     <meta name="description" content="{{ post.description if post.description else settings.blog_desc }}">
     <meta name="keywords" content="{% if tag_list %}{{ tag_list|join(', ') }}, {% endif %}technology, innovation, web development">
-    <meta name="author" content="{{ settings.blog_title }}">
+    <meta name="author" content="{{ settings.author }}">
     <meta name="publish_date" content="{{ post.created_at }}">
     
     <!-- Favicon -->
@@ -329,6 +329,51 @@
             font-style: italic;
         }
 
+        .author-section {
+            background: var(--fc-surface);
+            border: 2px solid var(--fc-black);
+            box-shadow: 8px 8px 0 0 var(--fc-yellow);
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--fc-black);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-family: var(--display-font);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-decoration: underline;
+        }
+
+        .author-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--fc-text);
+            margin-top: 0.5rem;
+        }
+
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -396,6 +441,28 @@
             .content h3 {
                 font-size: 1.2rem;
             }
+
+            .author-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+
+            .author-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+                margin: 0 auto;
+            }
+
+            .author-name {
+                font-size: 1.1rem;
+            }
+
+            .author-description {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -426,6 +493,41 @@
                 {{ post.html | safe }}
             </div>
         </article>
+
+        <!-- Debug: Post object attributes -->
+        <!-- {{ post }} -->
+        
+        {% if post.author %}
+        <div class="author-section">
+            <div class="author-avatar">
+                {{ post.author[0] }}
+            </div>
+            <div class="author-info">
+                <div class="author-name">{{ post.author }}</div>
+                {% if post.author == 'Michael Harrison' %}
+                <div class="author-description">
+                    Fascinated by how emerging technologies reshape society, particularly AI and the future of work. Focuses on uncovering the reality behind startup culture, including failures, equity issues, and the gap between Silicon Valley's stated values and actual practices.
+                </div>
+                {% elif post.author == 'Carmen Rodriguez' %}
+                <div class="author-description">
+                    Passionate about power dynamics in capital allocation and how funding decisions shape innovation access. Explores alternative funding models, systemic barriers for underrepresented founders, and the tension between financial returns and social impact.
+                </div>
+                {% elif post.author == 'Terry' %}
+                <div class="author-description">
+                    Driven by understanding how macroeconomic forces impact everyday lives, especially wealth inequality and economic mobility. Examines the intersection of global trade, monetary policy, and geopolitics while seeking to explain complex market dynamics in human terms.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <!-- Debug: No author found -->
+        <div class="author-section">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+                <div class="author-name">Anonymous</div>
+            </div>
+        </div>
+        {% endif %}
 
         <a href="/index.html" class="back-link">← Back to Home</a>
 

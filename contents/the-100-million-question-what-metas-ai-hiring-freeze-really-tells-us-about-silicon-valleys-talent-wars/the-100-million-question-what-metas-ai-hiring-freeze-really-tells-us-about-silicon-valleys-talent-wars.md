@@ -1,9 +1,10 @@
 ---
+author: 'Michael Harrison'
 title: The $100 Million Question - What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars
 pub_date: 2025-10-20
 description: Meta freezes AI hiring after spending $500M+ on compensation packages up to $100M to poach 50+ researchers from OpenAI and competitors. The move reveals a deeper truth - money alone can't win the talent war when culture and mission matter more. Now Meta shifts from acquisition to integration, reorganizing into Superintelligence Labs while Wall Street questions if the spending will deliver breakthroughs or dilute shareholder value.
 tags: meta, ai, hiring-freeze, talent-wars, silicon-valley, openai, anthropic, superintelligence, compensation, tech-industry
-featured_image: 
+featured_image:  
 ---
 
 # The $100 Million Question: What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars
