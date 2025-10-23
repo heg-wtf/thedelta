@@ -1,4 +1,5 @@
 ---
+
 author: 'Michael Harrison'
 title: The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter
 pub_date: 2025-10-22

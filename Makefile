@@ -11,6 +11,11 @@ build:
 	@echo "thedelta.news" > docs/CNAME
 	@echo "🖼️ Copying assets directory..."
 	@cp -r themes/default/assets docs/assets
+	@echo "📄 Copying static pages..."
+	@cp themes/default/about.html docs/about.html
+	@cp themes/default/editorial-policy.html docs/editorial-policy.html
+	@cp themes/default/contact.html docs/contact.html
+	@cp themes/default/advertise.html docs/advertise.html
 	@echo "🗺️ Generating sitemap..."
 	@make sitemap
 	@echo "🤖 Creating robots.txt..."
@@ -30,6 +35,30 @@ sitemap:
 	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
 	@echo "    <changefreq>weekly</changefreq>" >> docs/sitemap.xml
 	@echo "    <priority>1.0</priority>" >> docs/sitemap.xml
+	@echo "  </url>" >> docs/sitemap.xml
+	@echo "  <url>" >> docs/sitemap.xml
+	@echo "    <loc>https://thedelta.news/about.html</loc>" >> docs/sitemap.xml
+	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
+	@echo "    <changefreq>monthly</changefreq>" >> docs/sitemap.xml
+	@echo "    <priority>0.8</priority>" >> docs/sitemap.xml
+	@echo "  </url>" >> docs/sitemap.xml
+	@echo "  <url>" >> docs/sitemap.xml
+	@echo "    <loc>https://thedelta.news/editorial-policy.html</loc>" >> docs/sitemap.xml
+	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
+	@echo "    <changefreq>monthly</changefreq>" >> docs/sitemap.xml
+	@echo "    <priority>0.7</priority>" >> docs/sitemap.xml
+	@echo "  </url>" >> docs/sitemap.xml
+	@echo "  <url>" >> docs/sitemap.xml
+	@echo "    <loc>https://thedelta.news/contact.html</loc>" >> docs/sitemap.xml
+	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
+	@echo "    <changefreq>monthly</changefreq>" >> docs/sitemap.xml
+	@echo "    <priority>0.7</priority>" >> docs/sitemap.xml
+	@echo "  </url>" >> docs/sitemap.xml
+	@echo "  <url>" >> docs/sitemap.xml
+	@echo "    <loc>https://thedelta.news/advertise.html</loc>" >> docs/sitemap.xml
+	@echo "    <lastmod>$$(date -u +%Y-%m-%d)</lastmod>" >> docs/sitemap.xml
+	@echo "    <changefreq>monthly</changefreq>" >> docs/sitemap.xml
+	@echo "    <priority>0.6</priority>" >> docs/sitemap.xml
 	@echo "  </url>" >> docs/sitemap.xml
 	@for file in docs/2025/*/*/index.html; do \
 		if [ -f "$$file" ]; then \

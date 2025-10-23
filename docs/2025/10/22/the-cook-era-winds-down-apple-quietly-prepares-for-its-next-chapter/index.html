@@ -419,13 +419,78 @@
 
         .site-footer {
             margin-top: 4rem;
-            padding-top: 2.5rem;
+            padding-top: 3rem;
             border-top: 2px solid var(--fc-black);
+            background: var(--fc-background);
+        }
+
+        .footer-brand {
+            font-family: var(--display-font);
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 2.5rem;
+            color: var(--fc-black);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--fc-black);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--fc-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-column-links a {
             font-size: 0.85rem;
+            color: var(--fc-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column-links a:hover {
+            color: var(--fc-yellow);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--fc-border);
+            text-align: center;
+            font-size: 0.8rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            text-align: center;
             color: var(--fc-muted);
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         @media (max-width: 640px) {
@@ -485,6 +550,16 @@
 
             .author-description {
                 font-size: 0.85rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .footer-brand {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
@@ -581,7 +656,29 @@
         <a href="/index.html" class="back-link">← Back to Home</a>
 
         <footer class="site-footer">
-            © The Delta
+            <div class="footer-brand">The Delta</div>
+            
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Company</h3>
+                    <ul class="footer-column-links">
+                        <li><a href="/about.html">About The Delta</a></li>
+                        <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Contact Us</h3>
+                    <ul class="footer-column-links">
+                        <li><a href="/contact.html">Contact Editorial</a></li>
+                        <li><a href="/advertise.html">Advertise</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                © 2025 The Delta. All rights reserved.
+            </div>
         </footer>
     </div>
 </body>

@@ -12,11 +12,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }} - {{ settings.blog_title }}</title>
-    <meta name="description" content="{{ post.description if post.description else settings.blog_desc }}">
-    <meta name="keywords" content="{% if tag_list %}{{ tag_list|join(', ') }}, {% endif %}technology, innovation, web development">
-    <meta name="author" content="{{ settings.author }}">
-    <meta name="publish_date" content="{{ post.created_at }}">
+    <title>Advertise - The Delta</title>
+    <meta name="description" content="Reach The Delta's engaged audience of technology professionals and innovation leaders">
+    <meta name="keywords" content="advertising, sponsorship, technology audience, innovation marketing">
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
@@ -26,40 +24,20 @@
     <link rel="shortcut icon" href="/assets/favicon.ico">
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ post.title }}">
-    <meta property="og:description" content="{{ post.description if post.description else settings.blog_desc }}">
-    <meta property="og:site_name" content="{{ settings.blog_title }}">
-    {% if post.featured_image %}
-    <meta property="og:image" content="{{ post.featured_image }}">
-    {% else %}
-    <meta property="og:image" content="{{ settings.site_url }}/assets/thumbnail.png">
-    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Advertise - The Delta">
+    <meta property="og:description" content="Reach The Delta's engaged audience of technology professionals and innovation leaders">
+    <meta property="og:site_name" content="The Delta">
+    <meta property="og:image" content="/assets/thumbnail.png">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ post.title }}">
-    <meta name="twitter:description" content="{{ post.description if post.description else settings.blog_desc }}">
-    {% if post.featured_image %}
-    <meta name="twitter:image" content="{{ post.featured_image }}">
-    {% else %}
-    <meta name="twitter:image" content="{{ settings.site_url }}/assets/thumbnail.png">
-    {% endif %}
+    <meta name="twitter:title" content="Advertise - The Delta">
+    <meta name="twitter:description" content="Reach The Delta's engaged audience of technology professionals and innovation leaders">
+    <meta name="twitter:image" content="/assets/thumbnail.png">
     
-    <!-- Article specific -->
-    <meta property="article:published_time" content="{{ post.created_at }}">
-    {% if tag_list %}
-    {% for tag in tag_list %}
-    <meta property="article:tag" content="{{ tag }}">
-    {% endfor %}
-    {% endif %}
-    
-    <!-- Additional SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
-    <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ settings.site_url }}/sitemap.xml">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="/advertise.html">
     
     <style>
         :root {
@@ -152,11 +130,11 @@
             color: #fff;
         }
 
-        .article-header {
+        .page-header {
             margin-bottom: 3rem;
         }
 
-        .post-title {
+        .page-title {
             font-family: var(--display-font);
             font-size: clamp(2.4rem, 5vw, 3.6rem);
             line-height: 1.1;
@@ -164,36 +142,13 @@
             font-weight: 800;
         }
 
-        .post-meta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            font-size: 0.8rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
+        .page-subtitle {
+            font-size: 1.2rem;
             color: var(--fc-muted);
-            margin-bottom: 1.2rem;
+            margin-bottom: 2rem;
         }
 
-        .tag-list {
-            list-style: none;
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .tag-item {
-            background: var(--fc-yellow);
-            color: var(--fc-black);
-            padding: 0.35rem 0.9rem;
-            font-size: 0.7rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            font-weight: 600;
-            border: 2px solid var(--fc-black);
-        }
-
-        article {
+        .content {
             background: var(--fc-surface);
             padding: clamp(2rem, 5vw, 3.5rem);
             border: 2px solid var(--fc-black);
@@ -201,186 +156,106 @@
             margin-bottom: 3rem;
         }
 
-        .content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .content h1,
-        .content h2,
-        .content h3 {
+        .content h2 {
             font-family: var(--display-font);
+            font-size: 1.8rem;
             margin-top: 2.5rem;
             margin-bottom: 1.2rem;
             color: var(--fc-black);
             font-weight: 700;
             line-height: 1.25;
-        }
-
-        .content h1 {
-            font-size: 2.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--fc-yellow);
-        }
-
-        .content h2 {
-            font-size: 1.8rem;
             padding-left: 1rem;
             border-left: 4px solid var(--fc-yellow);
         }
 
-        .content h3 {
-            font-size: 1.4rem;
+        .content h2:first-child {
+            margin-top: 0;
         }
 
         .content p {
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .content ul,
-        .content ol {
+        .content ul {
             margin-left: 2rem;
             margin-bottom: 1.5rem;
         }
 
         .content li {
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .content code {
-            background: #fff3cd;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Courier New', monospace;
-            font-size: 0.9em;
-            border: 1px solid #ffe69c;
-        }
-
-        .content pre {
-            background: var(--fc-black);
-            color: #f8f8f2;
-            padding: 1.8rem;
-            border-radius: 0;
-            overflow-x: auto;
-            margin: 2rem 0;
-            border: 2px solid var(--fc-black);
-            box-shadow: 6px 6px 0 0 var(--fc-yellow);
-        }
-
-        .content pre code {
-            background: none;
-            padding: 0;
-            color: inherit;
-            border: none;
-        }
-
-        .content blockquote {
-            border-left: 6px solid var(--fc-yellow);
-            background: var(--fc-surface);
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            color: var(--fc-text);
-            font-style: italic;
-            position: relative;
-        }
-
-        .content blockquote strong {
-            color: var(--fc-black);
-            font-style: normal;
-        }
-
-        .content img {
-            max-width: 100%;
-            height: auto;
-            margin: 2rem 0;
-            border: 2px solid var(--fc-black);
-        }
-
-        .content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            border: 2px solid var(--fc-black);
-        }
-
-        .content th,
-        .content td {
-            border: 1px solid var(--fc-border);
-            padding: 1rem;
-            text-align: left;
-        }
-
-        .content th {
-            background: var(--fc-yellow);
-            color: var(--fc-black);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-        }
-
-        .content tr:nth-child(even) {
-            background: var(--fc-background);
-        }
-
-        .content hr {
-            border: none;
-            border-top: 2px solid var(--fc-black);
-            margin: 3rem 0;
-        }
-
-        .content strong {
-            font-weight: 700;
-            color: var(--fc-black);
-        }
-
-        .content em {
-            font-style: italic;
-        }
-
-        .author-section {
+        .advertising-card {
             background: var(--fc-surface);
             border: 2px solid var(--fc-black);
             box-shadow: 8px 8px 0 0 var(--fc-yellow);
             padding: 2rem;
             margin: 2rem 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
         }
 
-        .author-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--fc-black);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .author-info {
-            flex: 1;
-        }
-
-        .author-name {
+        .advertising-card h3 {
             font-family: var(--display-font);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-decoration: underline;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--fc-black);
         }
 
-        .author-description {
+        .advertising-card p {
+            margin-bottom: 1rem;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--fc-yellow);
+            color: var(--fc-black);
+            border: 2px solid var(--fc-black);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .email-link:hover {
+            background: var(--fc-black);
+            color: #fff;
+        }
+
+        .audience-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--fc-surface);
+            border: 2px solid var(--fc-black);
+            box-shadow: 6px 6px 0 0 var(--fc-yellow);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--display-font);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--fc-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
             font-size: 0.9rem;
-            line-height: 1.5;
-            color: var(--fc-text);
-            margin-top: 0.5rem;
+            color: var(--fc-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .back-link {
@@ -477,6 +352,10 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
+            .audience-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 640px) {
@@ -494,48 +373,22 @@
                 padding: 0.5rem 1rem;
             }
 
-            article {
+            .content {
                 padding: 1.8rem 1.6rem;
                 box-shadow: 8px 8px 0 0 var(--fc-yellow);
-            }
-
-            .content pre {
-                padding: 1.2rem;
-                box-shadow: 4px 4px 0 0 var(--fc-yellow);
-            }
-
-            .content h1 {
-                font-size: 1.8rem;
             }
 
             .content h2 {
                 font-size: 1.5rem;
             }
 
-            .content h3 {
-                font-size: 1.2rem;
-            }
-
-            .author-section {
-                flex-direction: column;
-                text-align: center;
+            .advertising-card {
                 padding: 1.5rem;
-                gap: 1rem;
+                box-shadow: 6px 6px 0 0 var(--fc-yellow);
             }
 
-            .author-avatar {
-                width: 60px;
-                height: 60px;
-                font-size: 1.2rem;
-                margin: 0 auto;
-            }
-
-            .author-name {
-                font-size: 1.1rem;
-            }
-
-            .author-description {
-                font-size: 0.85rem;
+            .audience-stats {
+                grid-template-columns: 1fr;
             }
 
             .footer-content {
@@ -551,69 +404,113 @@
     </style>
 </head>
 <body>
-    {% set contact_email = settings.contact_email | default('hello@example.com', true) %}
     <div class="page">
         <header class="masthead">
             <a href="/" class="brand">THE DELTA</a>
-            <a class="masthead-contact" href="mailto:{{ contact_email }}">Contact</a>
+            <a class="masthead-contact" href="mailto:me@heg.wtf">Contact</a>
         </header>
 
-        <div class="article-header">
-            <h1 class="post-title">{{ post.title }}</h1>
-            <div class="post-meta">
-                <span>{{ post.created_at }}</span>
+        <div class="page-header">
+            <h1 class="page-title">Advertise</h1>
+            <p class="page-subtitle">Reach technology leaders and innovation professionals</p>
+        </div>
+
+        <div class="content">
+            <h2>Our Audience</h2>
+            <p>The Delta reaches a highly engaged audience of technology professionals, startup founders, investors, and innovation leaders who are shaping the future of digital transformation.</p>
+
+            <div class="audience-stats">
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Decision Makers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$150K+</div>
+                    <div class="stat-label">Average Income</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12min</div>
+                    <div class="stat-label">Avg. Time on Site</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Tech Professionals</div>
+                </div>
             </div>
-            {% if tag_list %}
-            <ul class="tag-list">
-                {% for tag in tag_list %}
-                <li class="tag-item">{{ tag }}</li>
-                {% endfor %}
+
+            <h2>Advertising Options</h2>
+            <p>We offer several ways to reach our audience while maintaining editorial integrity:</p>
+
+            <div class="advertising-card">
+                <h3>📰 Sponsored Content</h3>
+                <p>Native articles that align with our editorial focus on technology and innovation. Content is clearly labeled as sponsored and must meet our editorial standards.</p>
+                <ul>
+                    <li>Thought leadership pieces</li>
+                    <li>Industry analysis and insights</li>
+                    <li>Product launches and announcements</li>
+                    <li>Case studies and success stories</li>
+                </ul>
+            </div>
+
+            <div class="advertising-card">
+                <h3>🎯 Display Advertising</h3>
+                <p>Strategic placement of banner ads and promotional content that doesn't interfere with the reading experience.</p>
+                <ul>
+                    <li>Header and sidebar placements</li>
+                    <li>In-article content blocks</li>
+                    <li>Newsletter sponsorships</li>
+                    <li>Retargeting campaigns</li>
+                </ul>
+            </div>
+
+            <div class="advertising-card">
+                <h3>🤝 Partnership Opportunities</h3>
+                <p>Long-term collaborations that provide value to our audience while supporting our mission.</p>
+                <ul>
+                    <li>Event sponsorships and partnerships</li>
+                    <li>Research collaborations</li>
+                    <li>Exclusive content series</li>
+                    <li>Community building initiatives</li>
+                </ul>
+            </div>
+
+            <h2>Editorial Integrity</h2>
+            <p>All advertising relationships are clearly disclosed and do not influence our editorial content. We maintain strict separation between advertising and editorial departments to preserve our independence and credibility.</p>
+
+            <h2>Target Audience Demographics</h2>
+            <ul>
+                <li><strong>Primary:</strong> Technology executives, startup founders, and innovation leaders</li>
+                <li><strong>Secondary:</strong> Investors, consultants, and industry analysts</li>
+                <li><strong>Geographic:</strong> Primarily North America, with growing international reach</li>
+                <li><strong>Interests:</strong> AI/ML, startup culture, digital transformation, emerging technologies</li>
+                <li><strong>Behavior:</strong> Early adopters, thought leaders, and decision makers</li>
             </ul>
-            {% endif %}
+
+            <h2>Get Started</h2>
+            <p>Ready to reach our engaged audience? Contact our advertising team to discuss opportunities and pricing.</p>
+
+            <div class="advertising-card">
+                <h3>📧 Advertising Contact</h3>
+                <p>For advertising inquiries, media kit requests, and partnership opportunities:</p>
+                <a href="mailto:me@heg.wtf?subject=Advertising Inquiry" class="email-link">me@heg.wtf</a>
+                <p><small>Please include "ADVERTISING INQUIRY" in your subject line for faster response.</small></p>
+            </div>
+
+            <h2>What We Need From You</h2>
+            <p>To provide the most relevant proposal, please include:</p>
+            <ul>
+                <li>Your company and product/service overview</li>
+                <li>Target audience and campaign objectives</li>
+                <li>Preferred advertising format and timeline</li>
+                <li>Budget range and campaign duration</li>
+                <li>Any specific requirements or restrictions</li>
+            </ul>
+
+            <h2>Response Time</h2>
+            <p>We typically respond to advertising inquiries within 24-48 hours during business days. For urgent campaigns, please mark your email as "URGENT" in the subject line.</p>
         </div>
 
-        <article>
-            <div class="content">
-                {{ post.html | safe }}
-            </div>
-        </article>
-
-        <!-- Debug: Post object attributes -->
-        <!-- {{ post }} -->
-        
-        {% if post.author %}
-        <div class="author-section">
-            <div class="author-avatar">
-                {{ post.author[0] }}
-            </div>
-            <div class="author-info">
-                <div class="author-name">{{ post.author }}</div>
-                {% if post.author == 'Michael Harrison' %}
-                <div class="author-description">
-                    Fascinated by how emerging technologies reshape society, particularly AI and the future of work. Focuses on uncovering the reality behind startup culture, including failures, equity issues, and the gap between Silicon Valley's stated values and actual practices.
-                </div>
-                {% elif post.author == 'Carmen Rodriguez' %}
-                <div class="author-description">
-                    Passionate about power dynamics in capital allocation and how funding decisions shape innovation access. Explores alternative funding models, systemic barriers for underrepresented founders, and the tension between financial returns and social impact.
-                </div>
-                {% elif post.author == 'Terry' %}
-                <div class="author-description">
-                    Driven by understanding how macroeconomic forces impact everyday lives, especially wealth inequality and economic mobility. Examines the intersection of global trade, monetary policy, and geopolitics while seeking to explain complex market dynamics in human terms.
-                </div>
-                {% endif %}
-            </div>
-        </div>
-        {% else %}
-        <!-- Debug: No author found -->
-        <div class="author-section">
-            <div class="author-avatar">A</div>
-            <div class="author-info">
-                <div class="author-name">Anonymous</div>
-            </div>
-        </div>
-        {% endif %}
-
-        <a href="/index.html" class="back-link">← Back to Home</a>
+        <a href="/" class="back-link">← Back to Home</a>
 
         <footer class="site-footer">
             <div class="footer-brand">The Delta</div>
