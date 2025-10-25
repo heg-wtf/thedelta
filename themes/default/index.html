@@ -454,8 +454,8 @@
                     <p class="hero-dek">{{ hero_desc }}</p>
                     {% endif %}
                     <p class="hero-meta">
-                        {% if feature_post.created_at %}
-                            {{ feature_post.created_at }}
+                        {% if feature_post.pub_date %}
+                            {{ feature_post.pub_date }}
                         {% else %}
                             Latest Update
                         {% endif %}
@@ -480,8 +480,8 @@
                             {% if post.description %}
                             <span class="story-summary">{{ post.description }}</span>
                             {% endif %}
-                            {% if post.created_at %}
-                            <span class="story-meta">{{ post.created_at }}</span>
+                            {% if post.pub_date %}
+                            <span class="story-meta">{{ post.pub_date }}</span>
                             {% endif %}
                         </li>
                         {% endfor %}
@@ -503,10 +503,10 @@
                         <p class="story-summary">{{ post.description }}</p>
                         {% endif %}
                         <div class="story-meta">
-                            {% if post.created_at %}
-                                {{ post.created_at }}
+                            {% if post.pub_date %}
+                                {{ post.pub_date }}
                             {% else %}
-                                October 25, 2025
+                                Updated regularly
                             {% endif %}
                         </div>
                     </li>
