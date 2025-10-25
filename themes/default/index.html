@@ -435,7 +435,7 @@
     {% set contact_email = settings.contact_email | default('hello@example.com', true) %}
     <div class="page">
         <header class="masthead">
-            <span class="brand">{{ settings.blog_title }}</span>
+            <a href="/" class="brand">{{ settings.blog_title }}</a>
             <a class="masthead-contact" href="mailto:{{ contact_email }}">Contact</a>
         </header>
 
