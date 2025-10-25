@@ -574,6 +574,11 @@
         </div>
 
         <article>
+            {% if post.featured_image %}
+            <div style="margin-bottom: 2rem;">
+                <img src="{{ post.featured_image }}" alt="{{ post.title }}" style="width: 100%; height: auto;">
+            </div>
+            {% endif %}
             <div class="content">
                 {{ post.html | safe }}
             </div>
@@ -585,7 +590,11 @@
         {% if post.author %}
         <div class="author-section">
             <div class="author-avatar">
+                {% if post.author == 'Terry' %}
+                <img src="/assets/terry.jpeg" alt="Terry" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                {% else %}
                 {{ post.author[0] }}
+                {% endif %}
             </div>
             <div class="author-info">
                 <div class="author-name">{{ post.author }}</div>
