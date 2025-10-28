@@ -3,7 +3,7 @@ title: Japan's JPYC Takes on Dollar Dominance: Will the Yen Stablecoin Challenge
 pub_date: 2025-10-28
 description: Japan's JPYC launches the world's first fully regulated yen-pegged stablecoin, backed by Circle's investment and Japan's FSA registration, entering a $308B market dominated by US players. The token maintains 1:1 peg through yen deposits and JGB backing while targeting ¥10 trillion in circulation to challenge dollar hegemony. Despite Circle's strategic backing, JPYC faces adoption challenges in a cash-loving market where cashless payments remain at just 42.8%, requiring 2-3 years minimum for widespread adoption according to former BOJ executives.
 tags: JPYC, Stablecoin, Cryptocurrency, Japan, Circle USDC, Fiat-Pegged Tokens, Yen, Financial Services Agency, Payment Services Act, Fintech, Digital Currency, Silicon Valley, Circle Investment, Asian Market, DeFi, Blockchain, Ethereum, Avalanche, Polygon, Corporate Settlements, Trade Finance, Remittances
-featured_image: 
+featured_image: jytc.jpeg
 author: 'Terry'
 ---
 
