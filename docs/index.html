@@ -53,12 +53,12 @@
             color-scheme: light;
             --fc-yellow: #ffd600;
             --fc-black: #0f0f0f;
-            --fc-text: #151515;
+            --fc-text: rgb(17, 17, 17);
             --fc-muted: #505050;
             --fc-border: #d8d8d8;
             --fc-surface: #ffffff;
             --fc-background: #f6f6f6;
-            --body-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            --body-font: Georgia, "Times New Roman", serif;
             --display-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
         }
 
@@ -70,7 +70,9 @@
 
         body {
             font-family: var(--body-font);
-            line-height: 1.6;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
             background: var(--fc-background);
             color: var(--fc-text);
             min-height: 100vh;
@@ -79,11 +81,13 @@
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
         a:hover {
-            color: var(--fc-yellow);
+            color: #8a8a8a; /* light gray on hover */
         }
 
         .page {

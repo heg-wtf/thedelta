@@ -7,8 +7,7 @@ featured_image: Apple-exclusive-F1-partner_big.jpg.large_2x.jpg
 author : 'Terry' 
 ---
  
-
-**Apple TV's Strategic Pivot: How Cupertino's $750M F1 Bet Signals a New Era for Content—and AAPL Stock**
+ 
 
 Six years into its streaming experiment, Apple is finally showing its hand. And it's not playing the Netflix game.
 

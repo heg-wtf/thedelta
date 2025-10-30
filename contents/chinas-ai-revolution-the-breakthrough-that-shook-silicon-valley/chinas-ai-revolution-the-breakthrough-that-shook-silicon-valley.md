@@ -5,8 +5,7 @@ description: DeepSeek's R1 model matched ChatGPT o1 performance for just $5.6M t
 tags: china, ai, deepseek, silicon-valley, nvidia, embodied-intelligence, robotics, efficiency, innovation, competition
 featured_image: 
 author: 'Michael Harrison'
----
-# China's AI Revolution: The Breakthrough That Shook Silicon Valley
+--- 
 
 **How DeepSeek and Embodied Intelligence Are Rewriting the Rules of the AI Race**
 

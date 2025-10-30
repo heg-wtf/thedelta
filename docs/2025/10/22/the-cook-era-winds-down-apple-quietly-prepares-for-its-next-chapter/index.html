@@ -81,12 +81,12 @@
             color-scheme: light;
             --fc-yellow: #ffd600;
             --fc-black: #0f0f0f;
-            --fc-text: #151515;
+            --fc-text: rgb(17, 17, 17);
             --fc-muted: #505050;
             --fc-border: #d8d8d8;
             --fc-surface: #ffffff;
             --fc-background: #f6f6f6;
-            --body-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            --body-font: Georgia, "Times New Roman", serif;
             --display-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
         }
 
@@ -98,7 +98,9 @@
 
         body {
             font-family: var(--body-font);
-            line-height: 1.6;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
             background: var(--fc-background);
             color: var(--fc-text);
             min-height: 100vh;
@@ -107,11 +109,13 @@
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
         a:hover {
-            color: var(--fc-yellow);
+            color: #8a8a8a; /* light gray on hover */
         }
 
         .page {
@@ -217,8 +221,9 @@
         }
 
         .content {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 400;
         }
 
         .content h1,
@@ -309,6 +314,26 @@
             height: auto;
             margin: 2rem 0;
             border: 2px solid var(--fc-black);
+        }
+
+        /* Image caption styles */
+        figure.image-with-caption {
+            margin: 2rem 0;
+        }
+
+        figure.image-with-caption > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0; /* figure controls spacing */
+        }
+
+        .image-caption {
+            font-family: var(--body-font);
+            font-size: 0.9rem; /* smaller than body text */
+            color: #8a8a8a; /* light gray */
+            line-height: 1.5;
+            margin-top: 0.5rem;
         }
 
         .content table {
@@ -608,8 +633,7 @@
         <article>
             
             <div class="content">
-                <h1>The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter</h1>
-<p><strong>Silicon Valley's most important succession plan is finally taking shape—and it points to an Apple built for hardware dominance, not risk-taking innovation</strong></p>
+                <p><strong>Silicon Valley's most important succession plan is finally taking shape—and it points to an Apple built for hardware dominance, not risk-taking innovation</strong></p>
 <p>CUPERTINO — The whispers have grown louder in Apple Park's minimalist corridors. After 14 years at the helm, Tim Cook, who turns 65 next month, is orchestrating what may be Silicon Valley's most consequential leadership transition since he replaced Steve Jobs in 2011. And while Cook isn't rushing for the exits—Bloomberg reports he's likely to stay at least three more years—the company is unmistakably positioning his successor.</p>
 <p>That heir apparent? John Ternus, Apple's 50-year-old hardware engineering chief who's been given an increasingly prominent spotlight at product launches. The choice tells us everything about where Apple is headed—and what it's willing to sacrifice to get there.</p>
 <h2>Why Now? The Calculus of Departure</h2>
@@ -637,7 +661,7 @@
         </article>
 
         <!-- Debug: Post object attributes -->
-        <!-- {'title': 'The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter', 'html': '<h1>The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter</h1>\n<p><strong>Silicon Valley\'s most important succession plan is finally taking shape—and it points to an Apple built for hardware dominance, not risk-taking innovation</strong></p>\n<p>CUPERTINO — The whispers have grown louder in Apple Park\'s minimalist corridors. After 14 years at the helm, Tim Cook, who turns 65 next month, is orchestrating what may be Silicon Valley\'s most consequential leadership transition since he replaced Steve Jobs in 2011. And while Cook isn\'t rushing for the exits—Bloomberg reports he\'s likely to stay at least three more years—the company is unmistakably positioning his successor.</p>\n<p>That heir apparent? John Ternus, Apple\'s 50-year-old hardware engineering chief who\'s been given an increasingly prominent spotlight at product launches. The choice tells us everything about where Apple is headed—and what it\'s willing to sacrifice to get there.</p>\n<h2>Why Now? The Calculus of Departure</h2>\n<p>Cook has been characteristically measured about retirement, telling interviewers he\'ll step down "when the voice in my head says it\'s time." But the timing isn\'t arbitrary. Cook has methodically transformed Apple into a $3.77 trillion behemoth with a business model Jobs never envisioned—services revenue now exceeds $96 billion annually, nearly a quarter of total revenue. He\'s diversified manufacturing beyond China into India and Vietnam, launched the Apple Watch and AirPods empires, and most critically, executed the audacious pivot to Apple Silicon that freed the Mac from Intel\'s constraints.</p>\n<p>In other words, Cook\'s operational masterpiece is complete. What remains is managing steady-state excellence—hardly the stuff that motivates someone who\'s "always driven to find ways to improve things," as he recently put it.</p>\n<p>The COO transition accelerated the timeline. When Jeff Williams—once considered Cook\'s natural successor—announced his retirement plans in July after 27 years with Apple, it eliminated the company\'s most obvious Plan B. Williams, 62, was "Tim Cook\'s Tim Cook," the operations wizard who understood supply chain optimization at the molecular level. His decision to step down as COO and fully retire by year\'s end forced Apple\'s hand on succession planning across the C-suite. Sabih Khan, 58, took over the COO role, but the broader executive shuffle revealed a generation of leaders approaching retirement age simultaneously.</p>\n<h2>The Ternus Bet: Betting Everything on Hardware</h2>\n<p>If you\'ve watched an Apple event lately, you\'ve seen Ternus. Apple\'s PR machine has been strategically amplifying his visibility, putting him front and center for product reveals. It\'s the same playbook Cook followed before his ascension—gradual exposure, increasing responsibility, calculated grooming.</p>\n<p>Ternus joined Apple in 2001 and cut his teeth on the engineering teams behind the iMac, iPad, and iPhone. But his defining achievement was leading the transition to Apple Silicon—the M-series chips that have redefined what\'s possible in personal computing. The M1\'s debut in 2020 delivered performance gains that "overshot" even Apple\'s internal expectations, as software chief Craig Federighi admitted. By 2023, Apple had completed the full Mac transition, achieving performance-per-watt efficiency that left Intel scrambling and forced Microsoft, Google, and others to chase ARM-based solutions.</p>\n<p>This is where Apple\'s future gets interesting—and potentially concerning. Ternus is an engineer\'s engineer, someone who speaks in nanometers and thermal envelopes. He\'s brilliant at execution, at squeezing every drop of performance from silicon. But he\'s not a product visionary. He\'s not dreaming up the next iPad or imagining how AI reshapes computing. He\'s the guy who makes someone else\'s vision work at scale.</p>\n<h2>The Optimist\'s Case: Operational Excellence, Squared</h2>\n<p>There\'s a compelling argument that Ternus is exactly what Apple needs. The company has matured beyond the era of "one more thing" product launches. It\'s an infrastructure play now—2.5 billion active devices creating a gravitational field that pulls users deeper into Apple\'s ecosystem. The Apple Silicon transition proved that world-class engineering <em>is</em> innovation when executed with Ternus-level precision.</p>\n<p>The M4 chip already delivers 2.9 TFLOPS of performance while sipping just 20 watts of power, leaving competitors like Nvidia\'s power-hungry offerings in the dust on efficiency metrics. The Neural Engine, running 38 trillion operations per second, positions Apple perfectly for on-device AI processing—the privacy-preserving approach that could be Apple\'s differentiator in the intelligence era.</p>\n<p>Ternus also mirrors Cook\'s age when he became CEO—50—suggesting the board wants stability and a decade-plus runway. In an industry obsessed with disruptive pivots, there\'s something to be said for a leader who simply executes brilliantly on a proven strategy. Wall Street certainly won\'t complain as long as services revenue keeps climbing and hardware margins stay fat.</p>\n<h2>The Pessimist\'s Case: Nokia 2.0</h2>\n<p>But here\'s the uncomfortable truth: Apple\'s senior leadership is circling retirement age en masse, and there\'s growing internal alarm about complacency. Eddy Cue, Cook\'s most trusted advisor and services chief, has reportedly been sounding warnings that Apple risks becoming "the next Nokia or BlackBerry" if it doesn\'t pivot faster to emerging technologies.</p>\n<p>The AI scramble exposed this vulnerability. While OpenAI, Google, and Microsoft raced ahead with transformer models and chatbots, Apple was caught flat-footed. Apple Intelligence, the company\'s much-hyped AI initiative, launched to lukewarm reviews—Siri remains frustratingly limited despite years of promises. John Giannandrea, the AI chief, reportedly faces an uncertain future after setbacks in development. Hardware chief Johny Srouji is "evaluating his future." Environmental leader Lisa Jackson may retire. The entire executive bench is destabilizing.</p>\n<p>Promoting Ternus sends a signal: Apple believes its future is iterative hardware improvements, not risky moonshots. There\'s no indication he has the product intuition or strategic vision to greenlight something radically new. Cook himself was a brilliant COO who became a competent CEO precisely because Jobs had already charted Apple\'s product roadmap for years. Ternus won\'t have that luxury.</p>\n<p>The broader concern is whether an engineer-CEO can navigate the industry\'s tectonic shifts. Computing is moving toward AI agents, ambient interfaces, and cloud-dependent intelligence—domains where Apple has consistently lagged. The Vision Pro, despite cutting-edge hardware, struggles to find product-market fit. The company\'s custom modem project has dragged on for years. These aren\'t engineering problems; they\'re strategy problems.</p>\n<h2>The Road Ahead: Hardware Perfection, Strategic Drift?</h2>\n<p>Apple under Ternus will likely look like Apple under Cook, squared—operationally flawless, financially dominant, and creatively conservative. Expect gorgeous hardware that works beautifully within Apple\'s walled garden. Expect iterative M-series improvements that widen the performance gap with rivals. Expect services revenue to march steadily upward.</p>\n<p>But don\'t expect the next iPhone—the category-defining product that bends the industry to Apple\'s will. That requires a different kind of leader, one who sees around corners rather than optimizing the straightaway. Whether that matters depends on your view of Apple\'s role: Is it a mature cash machine that should optimize for stability, or a technology pioneer that should keep swinging for the fences?</p>\n<p>Cook will likely transition to board chairman, maintaining influence while Ternus takes operational control. It\'s a sensible succession that minimizes disruption. But sensible doesn\'t always mean inspired. As Silicon Valley watches Apple\'s most important transition in a generation, the question isn\'t whether Ternus can run Apple—it\'s whether running Apple will be enough.</p>', 'created_at': '2025-10-22', 'featured_image': '', 'path': 'docs/2025/10/22/the-cook-era-winds-down-apple-quietly-prepares-for-its-next-chapter', 'description': "After 14 years, Tim Cook prepares to exit as Apple elevates John Ternus, the hardware engineering chief behind Apple Silicon, as heir apparent. The choice signals Apple's bet on operational excellence over risky innovation—but raises questions about whether an engineer-CEO can navigate AI, ambient computing, and strategy challenges. As the entire C-suite faces retirement, Silicon Valley watches to see if Apple becomes a mature cash machine or remains a technology pioneer.", 'author': 'Michael Harrison'} -->
+        <!-- {'title': 'The Cook Era Winds Down: Apple Quietly Prepares for Its Next Chapter', 'html': '<p><strong>Silicon Valley\'s most important succession plan is finally taking shape—and it points to an Apple built for hardware dominance, not risk-taking innovation</strong></p>\n<p>CUPERTINO — The whispers have grown louder in Apple Park\'s minimalist corridors. After 14 years at the helm, Tim Cook, who turns 65 next month, is orchestrating what may be Silicon Valley\'s most consequential leadership transition since he replaced Steve Jobs in 2011. And while Cook isn\'t rushing for the exits—Bloomberg reports he\'s likely to stay at least three more years—the company is unmistakably positioning his successor.</p>\n<p>That heir apparent? John Ternus, Apple\'s 50-year-old hardware engineering chief who\'s been given an increasingly prominent spotlight at product launches. The choice tells us everything about where Apple is headed—and what it\'s willing to sacrifice to get there.</p>\n<h2>Why Now? The Calculus of Departure</h2>\n<p>Cook has been characteristically measured about retirement, telling interviewers he\'ll step down "when the voice in my head says it\'s time." But the timing isn\'t arbitrary. Cook has methodically transformed Apple into a $3.77 trillion behemoth with a business model Jobs never envisioned—services revenue now exceeds $96 billion annually, nearly a quarter of total revenue. He\'s diversified manufacturing beyond China into India and Vietnam, launched the Apple Watch and AirPods empires, and most critically, executed the audacious pivot to Apple Silicon that freed the Mac from Intel\'s constraints.</p>\n<p>In other words, Cook\'s operational masterpiece is complete. What remains is managing steady-state excellence—hardly the stuff that motivates someone who\'s "always driven to find ways to improve things," as he recently put it.</p>\n<p>The COO transition accelerated the timeline. When Jeff Williams—once considered Cook\'s natural successor—announced his retirement plans in July after 27 years with Apple, it eliminated the company\'s most obvious Plan B. Williams, 62, was "Tim Cook\'s Tim Cook," the operations wizard who understood supply chain optimization at the molecular level. His decision to step down as COO and fully retire by year\'s end forced Apple\'s hand on succession planning across the C-suite. Sabih Khan, 58, took over the COO role, but the broader executive shuffle revealed a generation of leaders approaching retirement age simultaneously.</p>\n<h2>The Ternus Bet: Betting Everything on Hardware</h2>\n<p>If you\'ve watched an Apple event lately, you\'ve seen Ternus. Apple\'s PR machine has been strategically amplifying his visibility, putting him front and center for product reveals. It\'s the same playbook Cook followed before his ascension—gradual exposure, increasing responsibility, calculated grooming.</p>\n<p>Ternus joined Apple in 2001 and cut his teeth on the engineering teams behind the iMac, iPad, and iPhone. But his defining achievement was leading the transition to Apple Silicon—the M-series chips that have redefined what\'s possible in personal computing. The M1\'s debut in 2020 delivered performance gains that "overshot" even Apple\'s internal expectations, as software chief Craig Federighi admitted. By 2023, Apple had completed the full Mac transition, achieving performance-per-watt efficiency that left Intel scrambling and forced Microsoft, Google, and others to chase ARM-based solutions.</p>\n<p>This is where Apple\'s future gets interesting—and potentially concerning. Ternus is an engineer\'s engineer, someone who speaks in nanometers and thermal envelopes. He\'s brilliant at execution, at squeezing every drop of performance from silicon. But he\'s not a product visionary. He\'s not dreaming up the next iPad or imagining how AI reshapes computing. He\'s the guy who makes someone else\'s vision work at scale.</p>\n<h2>The Optimist\'s Case: Operational Excellence, Squared</h2>\n<p>There\'s a compelling argument that Ternus is exactly what Apple needs. The company has matured beyond the era of "one more thing" product launches. It\'s an infrastructure play now—2.5 billion active devices creating a gravitational field that pulls users deeper into Apple\'s ecosystem. The Apple Silicon transition proved that world-class engineering <em>is</em> innovation when executed with Ternus-level precision.</p>\n<p>The M4 chip already delivers 2.9 TFLOPS of performance while sipping just 20 watts of power, leaving competitors like Nvidia\'s power-hungry offerings in the dust on efficiency metrics. The Neural Engine, running 38 trillion operations per second, positions Apple perfectly for on-device AI processing—the privacy-preserving approach that could be Apple\'s differentiator in the intelligence era.</p>\n<p>Ternus also mirrors Cook\'s age when he became CEO—50—suggesting the board wants stability and a decade-plus runway. In an industry obsessed with disruptive pivots, there\'s something to be said for a leader who simply executes brilliantly on a proven strategy. Wall Street certainly won\'t complain as long as services revenue keeps climbing and hardware margins stay fat.</p>\n<h2>The Pessimist\'s Case: Nokia 2.0</h2>\n<p>But here\'s the uncomfortable truth: Apple\'s senior leadership is circling retirement age en masse, and there\'s growing internal alarm about complacency. Eddy Cue, Cook\'s most trusted advisor and services chief, has reportedly been sounding warnings that Apple risks becoming "the next Nokia or BlackBerry" if it doesn\'t pivot faster to emerging technologies.</p>\n<p>The AI scramble exposed this vulnerability. While OpenAI, Google, and Microsoft raced ahead with transformer models and chatbots, Apple was caught flat-footed. Apple Intelligence, the company\'s much-hyped AI initiative, launched to lukewarm reviews—Siri remains frustratingly limited despite years of promises. John Giannandrea, the AI chief, reportedly faces an uncertain future after setbacks in development. Hardware chief Johny Srouji is "evaluating his future." Environmental leader Lisa Jackson may retire. The entire executive bench is destabilizing.</p>\n<p>Promoting Ternus sends a signal: Apple believes its future is iterative hardware improvements, not risky moonshots. There\'s no indication he has the product intuition or strategic vision to greenlight something radically new. Cook himself was a brilliant COO who became a competent CEO precisely because Jobs had already charted Apple\'s product roadmap for years. Ternus won\'t have that luxury.</p>\n<p>The broader concern is whether an engineer-CEO can navigate the industry\'s tectonic shifts. Computing is moving toward AI agents, ambient interfaces, and cloud-dependent intelligence—domains where Apple has consistently lagged. The Vision Pro, despite cutting-edge hardware, struggles to find product-market fit. The company\'s custom modem project has dragged on for years. These aren\'t engineering problems; they\'re strategy problems.</p>\n<h2>The Road Ahead: Hardware Perfection, Strategic Drift?</h2>\n<p>Apple under Ternus will likely look like Apple under Cook, squared—operationally flawless, financially dominant, and creatively conservative. Expect gorgeous hardware that works beautifully within Apple\'s walled garden. Expect iterative M-series improvements that widen the performance gap with rivals. Expect services revenue to march steadily upward.</p>\n<p>But don\'t expect the next iPhone—the category-defining product that bends the industry to Apple\'s will. That requires a different kind of leader, one who sees around corners rather than optimizing the straightaway. Whether that matters depends on your view of Apple\'s role: Is it a mature cash machine that should optimize for stability, or a technology pioneer that should keep swinging for the fences?</p>\n<p>Cook will likely transition to board chairman, maintaining influence while Ternus takes operational control. It\'s a sensible succession that minimizes disruption. But sensible doesn\'t always mean inspired. As Silicon Valley watches Apple\'s most important transition in a generation, the question isn\'t whether Ternus can run Apple—it\'s whether running Apple will be enough.</p>', 'created_at': '2025-10-22', 'featured_image': '', 'path': 'docs/2025/10/22/the-cook-era-winds-down-apple-quietly-prepares-for-its-next-chapter', 'description': "After 14 years, Tim Cook prepares to exit as Apple elevates John Ternus, the hardware engineering chief behind Apple Silicon, as heir apparent. The choice signals Apple's bet on operational excellence over risky innovation—but raises questions about whether an engineer-CEO can navigate AI, ambient computing, and strategy challenges. As the entire C-suite faces retirement, Silicon Valley watches to see if Apple becomes a mature cash machine or remains a technology pioneer.", 'author': 'Michael Harrison'} -->
         
         
         <div class="author-section">
@@ -686,4 +710,33 @@
         </footer>
     </div>
 </body>
+<script>
+    (function () {
+        try {
+            var articleEl = document.querySelector('article');
+            if (!articleEl) return;
+            var imgs = articleEl.querySelectorAll('img[alt]');
+            imgs.forEach(function (img) {
+                // Skip if already wrapped
+                if (img.parentElement && img.parentElement.tagName.toLowerCase() === 'figure') return;
+                var alt = (img.getAttribute('alt') || '').trim();
+                if (!alt) return;
+
+                var figure = document.createElement('figure');
+                figure.className = 'image-with-caption';
+
+                var caption = document.createElement('figcaption');
+                caption.className = 'image-caption';
+                caption.textContent = alt;
+
+                var parent = img.parentNode;
+                parent.insertBefore(figure, img);
+                figure.appendChild(img);
+                figure.appendChild(caption);
+            });
+        } catch (e) {
+            // no-op
+        }
+    })();
+</script>
 </html>

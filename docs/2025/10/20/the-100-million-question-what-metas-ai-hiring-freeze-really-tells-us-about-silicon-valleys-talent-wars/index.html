@@ -81,12 +81,12 @@
             color-scheme: light;
             --fc-yellow: #ffd600;
             --fc-black: #0f0f0f;
-            --fc-text: #151515;
+            --fc-text: rgb(17, 17, 17);
             --fc-muted: #505050;
             --fc-border: #d8d8d8;
             --fc-surface: #ffffff;
             --fc-background: #f6f6f6;
-            --body-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+            --body-font: Georgia, "Times New Roman", serif;
             --display-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
         }
 
@@ -98,7 +98,9 @@
 
         body {
             font-family: var(--body-font);
-            line-height: 1.6;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
             background: var(--fc-background);
             color: var(--fc-text);
             min-height: 100vh;
@@ -107,11 +109,13 @@
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
         a:hover {
-            color: var(--fc-yellow);
+            color: #8a8a8a; /* light gray on hover */
         }
 
         .page {
@@ -217,8 +221,9 @@
         }
 
         .content {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 400;
         }
 
         .content h1,
@@ -309,6 +314,26 @@
             height: auto;
             margin: 2rem 0;
             border: 2px solid var(--fc-black);
+        }
+
+        /* Image caption styles */
+        figure.image-with-caption {
+            margin: 2rem 0;
+        }
+
+        figure.image-with-caption > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0; /* figure controls spacing */
+        }
+
+        .image-caption {
+            font-family: var(--body-font);
+            font-size: 0.9rem; /* smaller than body text */
+            color: #8a8a8a; /* light gray */
+            line-height: 1.5;
+            margin-top: 0.5rem;
         }
 
         .content table {
@@ -608,8 +633,7 @@
         <article>
             
             <div class="content">
-                <h1>The $100 Million Question: What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars</h1>
-<p>Meta just hit the brakes. After months of throwing around compensation packages that would make NBA superstars jealous—some offers reportedly reaching $100 million—the company has frozen all hiring in its AI division. The move, confirmed in late August, comes after Meta poached more than 50 AI researchers and engineers from competitors, including high-profile names from OpenAI, Google DeepMind, and Anthropic.</p>
+                <p>Meta just hit the brakes. After months of throwing around compensation packages that would make NBA superstars jealous—some offers reportedly reaching $100 million—the company has frozen all hiring in its AI division. The move, confirmed in late August, comes after Meta poached more than 50 AI researchers and engineers from competitors, including high-profile names from OpenAI, Google DeepMind, and Anthropic.</p>
 <p>But here's what makes this story fascinating: This isn't about Meta losing faith in AI. It's about something far more revealing—the company's struggle to compete for talent in a market where culture, not just cash, is currency.</p>
 <h2>The Zuckerberg Playbook: Go Big or Go Home</h2>
 <p>Mark Zuckerberg hasn't been subtle about his ambitions. He's publicly stated his mission to build "the most elite and talent-dense team in the industry" to achieve artificial superintelligence. To that end, Meta went on a spending spree that redefined Silicon Valley's compensation standards. The company spent over $500 million to attract top AI talent, and in June, poured $14.3 billion into Scale AI for a 49% stake, bringing founder Alexandr Wang into the fold to lead Meta's new superintelligence efforts.</p>
@@ -631,7 +655,7 @@
         </article>
 
         <!-- Debug: Post object attributes -->
-        <!-- {'title': "The $100 Million Question - What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars", 'html': '<h1>The $100 Million Question: What Meta\'s AI Hiring Freeze Really Tells Us About Silicon Valley\'s Talent Wars</h1>\n<p>Meta just hit the brakes. After months of throwing around compensation packages that would make NBA superstars jealous—some offers reportedly reaching $100 million—the company has frozen all hiring in its AI division. The move, confirmed in late August, comes after Meta poached more than 50 AI researchers and engineers from competitors, including high-profile names from OpenAI, Google DeepMind, and Anthropic.</p>\n<p>But here\'s what makes this story fascinating: This isn\'t about Meta losing faith in AI. It\'s about something far more revealing—the company\'s struggle to compete for talent in a market where culture, not just cash, is currency.</p>\n<h2>The Zuckerberg Playbook: Go Big or Go Home</h2>\n<p>Mark Zuckerberg hasn\'t been subtle about his ambitions. He\'s publicly stated his mission to build "the most elite and talent-dense team in the industry" to achieve artificial superintelligence. To that end, Meta went on a spending spree that redefined Silicon Valley\'s compensation standards. The company spent over $500 million to attract top AI talent, and in June, poured $14.3 billion into Scale AI for a 49% stake, bringing founder Alexandr Wang into the fold to lead Meta\'s new superintelligence efforts.</p>\n<p>The crown jewel? Shengjia Zhao, one of the co-creators of ChatGPT, who Meta hired away from OpenAI to become chief scientist of Meta Superintelligence Labs. The company also secured a package deal with three top researchers from OpenAI\'s Zurich office—Beyer, Kolesnikov, and Zhai—who helped launch that office after joining from Google DeepMind.</p>\n<h2>The Problem Money Can\'t Solve</h2>\n<p>But throwing money at the problem revealed something uncomfortable: Meta had to pay more because fewer people wanted to work there. As New York Magazine tech columnist John Herrman astutely observed, "There is a war over talent, but it\'s not a billion-dollar-a-head war. That\'s Meta\'s problem. That\'s because they can\'t recruit the same way that OpenAI can."</p>\n<p>Here\'s my take: The astronomical compensation packages weren\'t a flex—they were a symptom. When you\'re offering 10-50 times what your existing researchers make, you\'re not operating from a position of strength. You\'re compensating for something else, whether that\'s company culture, strategic clarity, or the simple fact that researchers would rather work at OpenAI or Anthropic for less money.</p>\n<p>The internal fallout supports this theory. Veteran researchers are reportedly threatening to quit unless integrated into the prestigious Superintelligence Labs, with some eyeing moves to competitors like Anthropic. When your hiring strategy creates "status divisions" that alienate your existing talent, you\'ve created a new problem while solving the old one.</p>\n<h2>The Hiring Freeze: Strategic Pause or Reality Check?</h2>\n<p>Meta confirmed the hiring freeze in August, describing it as "basic organizational planning" to create "a solid structure for our new superintelligence efforts after bringing people on board". The company has reorganized its AI work into four groups under the umbrella of "Meta Superintelligence Labs"—a team focused on machine superintelligence nicknamed the "TBD lab," an AI products group, an infrastructure unit, and a longer-term research division.</p>\n<p>Daniel Newman, CEO at Futurum Group, called it a "natural resting point" after "making several acquisition-sized offers and hires in the nine-figure range." That\'s the diplomatic read. The less charitable interpretation? Meta needs to figure out if all this expensive talent can actually deliver before writing more nine-figure checks.</p>\n<p>Wall Street isn\'t entirely convinced. Morgan Stanley analysts warned that the massive compensation packages offered by Meta could threaten the company\'s ability to return capital to investors through buybacks, noting the spending "has the potential to drive AI breakthroughs with massive value creation or could dilute shareholder value without any clear innovation gains."</p>\n<h2>What This Means for Silicon Valley\'s AI Arms Race</h2>\n<p>The broader implications are fascinating. We\'re witnessing a fundamental shift in how top AI talent evaluates opportunities. Money still matters—of course it does—but increasingly, researchers are choosing where to work based on mission alignment, technical culture, and the caliber of problems they\'ll tackle. OpenAI\'s mission-driven approach, despite all its drama, continues to resonate. Anthropic\'s focus on AI safety attracts talent that shares those values. </p>\n<p>Meta, for all its resources and ambition, is having to work harder to compete in that marketplace. The company that missed the mobile operating system wave and has chafed under Apple and Google\'s platform control is desperate not to repeat that mistake in the AI era. But you can\'t buy your way to being the place researchers want to work—you have to build it.</p>\n<p>The hiring freeze suggests Meta is now focused on integration rather than acquisition. That\'s probably wise. The company has deployed AI-augmented systems internally that enable senior engineers to oversee tasks previously requiring entire teams, with cost savings estimated at $810 million to $1.5 billion annually. If those systems and the new talent can deliver breakthroughs in superintelligence, the spending spree will look prescient. If not, it\'ll be remembered as the moment Silicon Valley\'s AI talent wars jumped the shark.</p>\n<p>Either way, one thing is clear: In the race to build artificial superintelligence, having the deepest pockets isn\'t enough. You need to build something people believe in. And right now, that\'s Meta\'s $100 million question.</p>', 'created_at': '2025-10-20', 'featured_image': '', 'path': 'docs/2025/10/20/the-100-million-question-what-metas-ai-hiring-freeze-really-tells-us-about-silicon-valleys-talent-wars', 'description': "Meta freezes AI hiring after spending $500M+ on compensation packages up to $100M to poach 50+ researchers from OpenAI and competitors. The move reveals a deeper truth - money alone can't win the talent war when culture and mission matter more. Now Meta shifts from acquisition to integration, reorganizing into Superintelligence Labs while Wall Street questions if the spending will deliver breakthroughs or dilute shareholder value.", 'author': 'Michael Harrison'} -->
+        <!-- {'title': "The $100 Million Question - What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars", 'html': '<p>Meta just hit the brakes. After months of throwing around compensation packages that would make NBA superstars jealous—some offers reportedly reaching $100 million—the company has frozen all hiring in its AI division. The move, confirmed in late August, comes after Meta poached more than 50 AI researchers and engineers from competitors, including high-profile names from OpenAI, Google DeepMind, and Anthropic.</p>\n<p>But here\'s what makes this story fascinating: This isn\'t about Meta losing faith in AI. It\'s about something far more revealing—the company\'s struggle to compete for talent in a market where culture, not just cash, is currency.</p>\n<h2>The Zuckerberg Playbook: Go Big or Go Home</h2>\n<p>Mark Zuckerberg hasn\'t been subtle about his ambitions. He\'s publicly stated his mission to build "the most elite and talent-dense team in the industry" to achieve artificial superintelligence. To that end, Meta went on a spending spree that redefined Silicon Valley\'s compensation standards. The company spent over $500 million to attract top AI talent, and in June, poured $14.3 billion into Scale AI for a 49% stake, bringing founder Alexandr Wang into the fold to lead Meta\'s new superintelligence efforts.</p>\n<p>The crown jewel? Shengjia Zhao, one of the co-creators of ChatGPT, who Meta hired away from OpenAI to become chief scientist of Meta Superintelligence Labs. The company also secured a package deal with three top researchers from OpenAI\'s Zurich office—Beyer, Kolesnikov, and Zhai—who helped launch that office after joining from Google DeepMind.</p>\n<h2>The Problem Money Can\'t Solve</h2>\n<p>But throwing money at the problem revealed something uncomfortable: Meta had to pay more because fewer people wanted to work there. As New York Magazine tech columnist John Herrman astutely observed, "There is a war over talent, but it\'s not a billion-dollar-a-head war. That\'s Meta\'s problem. That\'s because they can\'t recruit the same way that OpenAI can."</p>\n<p>Here\'s my take: The astronomical compensation packages weren\'t a flex—they were a symptom. When you\'re offering 10-50 times what your existing researchers make, you\'re not operating from a position of strength. You\'re compensating for something else, whether that\'s company culture, strategic clarity, or the simple fact that researchers would rather work at OpenAI or Anthropic for less money.</p>\n<p>The internal fallout supports this theory. Veteran researchers are reportedly threatening to quit unless integrated into the prestigious Superintelligence Labs, with some eyeing moves to competitors like Anthropic. When your hiring strategy creates "status divisions" that alienate your existing talent, you\'ve created a new problem while solving the old one.</p>\n<h2>The Hiring Freeze: Strategic Pause or Reality Check?</h2>\n<p>Meta confirmed the hiring freeze in August, describing it as "basic organizational planning" to create "a solid structure for our new superintelligence efforts after bringing people on board". The company has reorganized its AI work into four groups under the umbrella of "Meta Superintelligence Labs"—a team focused on machine superintelligence nicknamed the "TBD lab," an AI products group, an infrastructure unit, and a longer-term research division.</p>\n<p>Daniel Newman, CEO at Futurum Group, called it a "natural resting point" after "making several acquisition-sized offers and hires in the nine-figure range." That\'s the diplomatic read. The less charitable interpretation? Meta needs to figure out if all this expensive talent can actually deliver before writing more nine-figure checks.</p>\n<p>Wall Street isn\'t entirely convinced. Morgan Stanley analysts warned that the massive compensation packages offered by Meta could threaten the company\'s ability to return capital to investors through buybacks, noting the spending "has the potential to drive AI breakthroughs with massive value creation or could dilute shareholder value without any clear innovation gains."</p>\n<h2>What This Means for Silicon Valley\'s AI Arms Race</h2>\n<p>The broader implications are fascinating. We\'re witnessing a fundamental shift in how top AI talent evaluates opportunities. Money still matters—of course it does—but increasingly, researchers are choosing where to work based on mission alignment, technical culture, and the caliber of problems they\'ll tackle. OpenAI\'s mission-driven approach, despite all its drama, continues to resonate. Anthropic\'s focus on AI safety attracts talent that shares those values. </p>\n<p>Meta, for all its resources and ambition, is having to work harder to compete in that marketplace. The company that missed the mobile operating system wave and has chafed under Apple and Google\'s platform control is desperate not to repeat that mistake in the AI era. But you can\'t buy your way to being the place researchers want to work—you have to build it.</p>\n<p>The hiring freeze suggests Meta is now focused on integration rather than acquisition. That\'s probably wise. The company has deployed AI-augmented systems internally that enable senior engineers to oversee tasks previously requiring entire teams, with cost savings estimated at $810 million to $1.5 billion annually. If those systems and the new talent can deliver breakthroughs in superintelligence, the spending spree will look prescient. If not, it\'ll be remembered as the moment Silicon Valley\'s AI talent wars jumped the shark.</p>\n<p>Either way, one thing is clear: In the race to build artificial superintelligence, having the deepest pockets isn\'t enough. You need to build something people believe in. And right now, that\'s Meta\'s $100 million question.</p>', 'created_at': '2025-10-20', 'featured_image': '', 'path': 'docs/2025/10/20/the-100-million-question-what-metas-ai-hiring-freeze-really-tells-us-about-silicon-valleys-talent-wars', 'description': "Meta freezes AI hiring after spending $500M+ on compensation packages up to $100M to poach 50+ researchers from OpenAI and competitors. The move reveals a deeper truth - money alone can't win the talent war when culture and mission matter more. Now Meta shifts from acquisition to integration, reorganizing into Superintelligence Labs while Wall Street questions if the spending will deliver breakthroughs or dilute shareholder value.", 'author': 'Michael Harrison'} -->
         
         
         <div class="author-section">
@@ -680,4 +704,33 @@
         </footer>
     </div>
 </body>
+<script>
+    (function () {
+        try {
+            var articleEl = document.querySelector('article');
+            if (!articleEl) return;
+            var imgs = articleEl.querySelectorAll('img[alt]');
+            imgs.forEach(function (img) {
+                // Skip if already wrapped
+                if (img.parentElement && img.parentElement.tagName.toLowerCase() === 'figure') return;
+                var alt = (img.getAttribute('alt') || '').trim();
+                if (!alt) return;
+
+                var figure = document.createElement('figure');
+                figure.className = 'image-with-caption';
+
+                var caption = document.createElement('figcaption');
+                caption.className = 'image-caption';
+                caption.textContent = alt;
+
+                var parent = img.parentNode;
+                parent.insertBefore(figure, img);
+                figure.appendChild(img);
+                figure.appendChild(caption);
+            });
+        } catch (e) {
+            // no-op
+        }
+    })();
+</script>
 </html>

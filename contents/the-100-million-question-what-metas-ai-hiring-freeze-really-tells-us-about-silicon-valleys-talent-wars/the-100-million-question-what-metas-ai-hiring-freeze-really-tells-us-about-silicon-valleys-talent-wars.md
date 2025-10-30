@@ -6,8 +6,7 @@ description: Meta freezes AI hiring after spending $500M+ on compensation packag
 tags: meta, ai, hiring-freeze, talent-wars, silicon-valley, openai, anthropic, superintelligence, compensation, tech-industry
 featured_image:  
 ---
-
-# The $100 Million Question: What Meta's AI Hiring Freeze Really Tells Us About Silicon Valley's Talent Wars
+ 
 
 Meta just hit the brakes. After months of throwing around compensation packages that would make NBA superstars jealous—some offers reportedly reaching $100 million—the company has frozen all hiring in its AI division. The move, confirmed in late August, comes after Meta poached more than 50 AI researchers and engineers from competitors, including high-profile names from OpenAI, Google DeepMind, and Anthropic.
 

@@ -71,11 +71,13 @@
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
         a:hover {
-            color: var(--fc-yellow);
+            color: #8a8a8a; /* light gray on hover */
         }
 
         .page {
@@ -188,6 +190,27 @@
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
             line-height: 1.8;
+        }
+
+        /* Image caption styles */
+        figure.image-with-caption {
+            margin: 2rem 0;
+        }
+
+        figure.image-with-caption > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0; /* figure controls spacing */
+            border: 2px solid var(--fc-black);
+        }
+
+        .image-caption {
+            font-family: var(--body-font);
+            font-size: 0.9rem; /* smaller than body text */
+            color: #8a8a8a; /* light gray */
+            line-height: 1.5;
+            margin-top: 0.5rem;
         }
 
         .back-link {
@@ -390,4 +413,31 @@
         </footer>
     </div>
 </body>
+<script>
+    (function () {
+        try {
+            var contentEl = document.querySelector('.content') || document.body;
+            var imgs = contentEl.querySelectorAll('img[alt]');
+            imgs.forEach(function (img) {
+                if (img.parentElement && img.parentElement.tagName.toLowerCase() === 'figure') return;
+                var alt = (img.getAttribute('alt') || '').trim();
+                if (!alt) return;
+
+                var figure = document.createElement('figure');
+                figure.className = 'image-with-caption';
+
+                var caption = document.createElement('figcaption');
+                caption.className = 'image-caption';
+                caption.textContent = alt;
+
+                var parent = img.parentNode;
+                parent.insertBefore(figure, img);
+                figure.appendChild(img);
+                figure.appendChild(caption);
+            });
+        } catch (e) {
+            // no-op
+        }
+    })();
+</script>
 </html>

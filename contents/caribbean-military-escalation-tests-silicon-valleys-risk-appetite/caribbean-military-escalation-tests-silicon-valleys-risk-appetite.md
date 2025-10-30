@@ -6,8 +6,7 @@ tags: ["geopolitical-risk", "venture-capital", "caribbean-tensions", "venezuela"
 featured_image: 
 author : Terry
 ---
-
-# Caribbean Military Escalation Tests Silicon Valley's Risk Appetite
+ 
 
 **As US-Venezuela tensions reach critical levels, venture capitalists confront a geopolitical landscape that defies the Russia-Ukraine playbook**
 
