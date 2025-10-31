@@ -617,6 +617,10 @@
             <div class="author-avatar">
                 {% if post.author == 'Terry' %}
                 <img src="/assets/terry.jpeg" alt="Terry" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                {% elif post.author == 'Michael Harrison' %}
+                <img src="/assets/MichaelHarrison.jpeg" alt="Michael Harrison" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                {% elif post.author == 'Carmen Rodriguez' %}
+                <img src="/assets/CarmenRodriguez.jpeg" alt="Carmen Rodriguez" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                 {% else %}
                 {{ post.author[0] }}
                 {% endif %}
