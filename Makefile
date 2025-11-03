@@ -1,4 +1,4 @@
-.PHONY: serve build clean new
+.PHONY: serve build clean new sitemap robots ads
 
 serve: build
 	@echo "🚀 Starting local server at http://localhost:8002"
@@ -20,6 +20,8 @@ build:
 	@make sitemap
 	@echo "🤖 Creating robots.txt..."
 	@make robots
+	@echo "📢 Creating ads.txt..."
+	@make ads
 	@echo "✅ Build complete!"
 
 clean:
@@ -77,6 +79,9 @@ robots:
 	@echo "User-agent: *" > docs/robots.txt
 	@echo "Allow: /" >> docs/robots.txt
 	@echo "Sitemap: https://thedelta.news/sitemap.xml" >> docs/robots.txt
+
+ads:
+	@echo "google.com, pub-8699046198561974, DIRECT, f08c47fec0942fa0" > docs/ads.txt
 
 new:
 	@if [ -z "$(TITLE)" ]; then \
