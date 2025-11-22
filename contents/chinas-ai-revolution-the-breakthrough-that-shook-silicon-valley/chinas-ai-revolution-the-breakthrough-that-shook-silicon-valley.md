@@ -4,7 +4,7 @@ pub_date: 2025-10-22
 description: DeepSeek's R1 model matched ChatGPT o1 performance for just $5.6M training cost, triggering Nvidia's $593B market crash and Marc Andreessen's "AI Sputnik moment." China's efficiency-driven approach—using Mixture-of-Experts and constrained H800 GPUs—challenges Silicon Valley's brute-force capital expenditure model. Meanwhile, China dominates embodied AI with 342K industrial robots deployed in 2024, creating an insurmountable data flywheel advantage in robotics and humanoid development.
 tags: china, ai, deepseek, silicon-valley, nvidia, embodied-intelligence, robotics, efficiency, innovation, competition
 featured_image: 
-author: 'Michael Harrison'
+author: 'Terry'
 --- 
 
 **How DeepSeek and Embodied Intelligence Are Rewriting the Rules of the AI Race**

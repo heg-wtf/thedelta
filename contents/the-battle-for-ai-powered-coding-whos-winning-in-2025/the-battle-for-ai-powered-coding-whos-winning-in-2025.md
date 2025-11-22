@@ -4,6 +4,7 @@ pub_date: 2025-11-22
 description: The AI coding wars of 2025 pit Cursor, Google Antigravity, OpenAI Codex, and Claude Code against each other in a battle to revolutionize software development. Each platform brings unique strengths—from Cursor's parallel agent capabilities to Codex's 24-hour autonomous coding sessions—as they compete to transform how developers build software. The competition is driving rapid innovation, making world-class AI coding tools accessible for $20-40/month while fundamentally reshaping the role of software developers from code authors to code architects.
 tags: AI coding tools, software development, Cursor, Google Antigravity, OpenAI Codex, Claude Code, AI agents, developer tools, coding assistants
 featured_image: ai-battle.jpeg
+author: 'Terry'
 --- 
 
 **Silicon Valley's AI coding wars reached a dramatic crescendo this November. From Google's surprise launch of Antigravity—powered by the new Gemini 3 model—to OpenAI's Codex Max running 24-hour coding marathons, the race to control how software gets built has never been more intense. We're witnessing the most dramatic transformation in development tools since the IDE revolution.**

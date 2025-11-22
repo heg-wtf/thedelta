@@ -103,6 +103,7 @@ new:
 	echo "description: " >> "$$FILE"; \
 	echo "tags: " >> "$$FILE"; \
 	echo "featured_image: " >> "$$FILE"; \
+	echo "author: 'Terry'" >> "$$FILE"; \
 	echo "---" >> "$$FILE"; \
 	echo "" >> "$$FILE"; \
 	echo "# $(TITLE)" >> "$$FILE"; \
