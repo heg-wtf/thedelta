@@ -4,6 +4,7 @@ pub_date: 2025-11-26
 description: Google launches Gemini 3 with record-breaking benchmarks—1501 Elo on LMArena and 73 points on Artificial Analysis Intelligence Index—pushing Alphabet's market cap toward $4 trillion as stock surges 9% over two sessions. The model debuts simultaneously across 2 billion monthly AI Overviews users and 650 million Gemini app users, leveraging Google's proprietary Ironwood TPUs and full-stack infrastructure advantage. OpenAI's Sam Altman warns staff of "rough vibes" ahead while Anthropic releases Claude Opus 4.5 in reactive response, as Google's distribution scale and pricing at $2 per million input tokens reshape competitive dynamics.
 tags: Google, Gemini 3, AI, Alphabet, OpenAI, Anthropic, Stock Market, Benchmark, TPU, Distribution
 featured_image: google-gemini3.jpeg
+author: 'Michael Harrison'
 ---
 
 **Mountain View, CA** — On November 18, 2025, Google dropped Gemini 3 into the market like a precision-guided missile aimed directly at OpenAI's headquarters. Within 72 hours, [Alphabet stock surged 3% to hit a record $292.82](https://coincentral.com/alphabet-googl-stock-gemini-3-launch-pushes-shares-to-all-time-high/), pushing the company's market cap toward an eye-watering $4 trillion. The message to Silicon Valley was unmistakable: the search giant that got caught flat-footed by ChatGPT three years ago just reclaimed the AI throne.
